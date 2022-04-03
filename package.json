@@ -13,6 +13,7 @@
 		"@sveltecasts/svelte-youtube": "0.0.5",
 		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/kit": "next",
+		"@svicons/ionicons-outline": "^0.1.8",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.1",

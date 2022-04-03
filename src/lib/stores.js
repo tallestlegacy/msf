@@ -9,3 +9,5 @@ export const newsUrl = 'https://yh-finance.p.rapidapi.com/news/v2/list?snippetCo
 export const tickerUrl = 'https://yh-finance.p.rapidapi.com/market/get-trending-tickers?region=US';
 
 export const news = writable([]);
+
+export const loggedIn = writable(false);

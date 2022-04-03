@@ -7,14 +7,19 @@
 </script>
 
 <a {href} class={selected ? 'selected' : ''}>
-	{pathname}
+	<slot />{pathname}
 </a>
 
 <style lang="scss">
 	a {
-		background-color: $base2;
+		background-color: $base1;
 		padding: 0.5rem 1rem;
-		border-radius: 0.5rem;
+		border-radius: 0.3rem;
+		color: #fff7;
+		display: grid;
+		grid-template-columns: 1.2rem 1fr;
+		gap: 0.5rem;
+		align-items: center;
 	}
 
 	.selected {
