@@ -11,3 +11,4 @@ export const tickerUrl = 'https://yh-finance.p.rapidapi.com/market/get-trending-
 export const news = writable([]);
 
 export const loggedIn = writable(false);
+export const profile = writable({});

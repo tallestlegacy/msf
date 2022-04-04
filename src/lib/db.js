@@ -1,9 +1,10 @@
 import { MongoClient } from 'mongodb';
 
 //let uri = process.env.DB_URI;
-let uri = 'mongodb+srv://root:denri@cluster0.a5lhx.mongodb.net/survey?retryWrites=true&w=majority';
+let uri =
+	'mongodb+srv://root:denri@cluster0.snvzo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
-let dbName = 'survey';
+let dbName = 'msf';
 
 let cachedClient = null;
 let cachedDb = null;
@@ -40,4 +41,3 @@ export const getCollection = async (collectionName) => {
 	const collection = db.collection(collectionName || '');
 	return collection;
 };
-

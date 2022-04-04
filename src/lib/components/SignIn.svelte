@@ -1,26 +1,41 @@
 <script>
+	import { profile, loggedIn } from '$lib/stores';
 	let user = {
-		email: '',
+		_id: '',
 		password: ''
 	};
 
 	const signIn = async () => {
-		const res = await fetch('/login', {
-			method: 'GET',
+		const res = await fetch('/login/signin', {
+			method: 'POST',
 			body: JSON.stringify(user)
 		});
 
-		console.log(await res.json());
+		const response = await res.json();
+
+		console.log(response);
+
+		if (response.status === 200) {
+			profile.set(response.user);
+			loggedIn.set(true);
+		} else {
+			alert('Invalid Email or Password');
+		}
 	};
 </script>
 
-<h1>Sign Up</h1>
-<form>
+<h1>Sign In</h1>
+<form on:submit|preventDefault={signIn}>
 	<div class="inputs">
 		<label for="email">Email</label>
-		<input type="email" placeholder="john@doe.com" bind:value={user.email} required />
+		<input type="email" placeholder="john@doe.com" bind:value={user._id} required />
 		<label for="">Password</label>
-		<input type="password" placeholder="Super Secret Password" bind:value={user.fname} required />
+		<input
+			type="password"
+			placeholder="Super Secret Password"
+			bind:value={user.password}
+			required
+		/>
 	</div>
 	<button type="submit"> Submit </button>
 </form>
