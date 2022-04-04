@@ -26,6 +26,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"mongodb": "^4.4.1",
 		"svelte-frappe-charts": "^1.9.1"
 	}
 }
