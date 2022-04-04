@@ -1,16 +1,18 @@
 <script>
 	export let newsData = {};
-
-	$: image = newsData.content.thumbnail.resolutions.slice(-1)[0];
 </script>
 
 <figure class="news-card">
-	<img src={image.url} alt="" />
+	{#if newsData.content.thumbnail}
+		<img src={newsData.content.thumbnail.resolutions[0].url} alt="" />
+	{/if}
 	<figcaption>
 		<span class="title">{newsData.content.title}</span>
 		<span>
 			{newsData.content.provider.displayName},
-			<a href={newsData.content.clickThroughUrl}>Read More</a>
+			{#if newsData.content.clickThroughUrl}
+				<a href={newsData.content.clickThroughUrl.url}>Read More</a>
+			{/if}
 		</span>
 		<span class="date">
 			{new Date(newsData.content.pubDate).toLocaleString()}

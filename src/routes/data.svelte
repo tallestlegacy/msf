@@ -48,17 +48,24 @@
 		padding: 1rem;
 	}
 	table {
-		outline: 2px solid $white;
+		outline: 2px solid #fff3;
 		width: 100%;
 	}
 
 	thead {
-		border-bottom: 2px solid $white;
+		border-bottom: 2px solid #fff3;
 		background-color: $base2;
 	}
 
+	td {
+		padding: 4px;
+		color: #fff9;
+	}
 	tr:nth-of-type(even) {
-		background-color: $base2;
+		background-color: #111;
+		td {
+			color: #fff4;
+		}
 	}
 	th,
 	tr {

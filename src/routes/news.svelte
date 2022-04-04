@@ -13,6 +13,7 @@
 		});
 
 		const { data } = await res.json();
+		console.log(data);
 		mounted = true;
 		return data.main.stream;
 	}
